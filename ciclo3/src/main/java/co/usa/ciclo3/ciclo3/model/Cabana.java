@@ -3,20 +3,8 @@ package co.usa.ciclo3.ciclo3.model;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.io.Serializable;
 import java.util.List;
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 
-/**
- *
- * @author ecaleno
- */
 @Entity
 @Table(name = "cabin")
 public class Cabana implements Serializable {
@@ -30,10 +18,6 @@ public class Cabana implements Serializable {
     private String name;
     private String description;
 
-//    @ManyToOne
-//    @JoinColumn(name="categoriaId")
-//    @JsonIgnoreProperties("papelerias")
-//    private Categoria categoria;
     @ManyToOne
     @JoinColumn(name = "idCategory")
     @JsonIgnoreProperties("category")
@@ -45,7 +29,7 @@ public class Cabana implements Serializable {
 
     @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "cabin")
     @JsonIgnoreProperties({"cabin", "messages"})
-    public List<Reserva> reserva;
+    public List<Reserva> reservations;
 
     public Integer getId() {
         return id;
@@ -103,16 +87,12 @@ public class Cabana implements Serializable {
         this.messages = messages;
     }
 
-    public List<Reserva> getReserva() {
-        return reserva;
+    public List<Reserva> getReservations() {
+        return reservations;
     }
 
-    public void setReserva(List<Reserva> reserva) {
-        this.reserva = reserva;
+    public void setReservations(List<Reserva> reservations) {
+        this.reservations = reservations;
     }
-
-       
-
-    
 
 }

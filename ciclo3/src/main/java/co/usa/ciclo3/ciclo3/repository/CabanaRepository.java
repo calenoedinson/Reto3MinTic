@@ -9,22 +9,24 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public class CabanaRepository {
-     @Autowired
+
+    @Autowired
     private CabanaCrudRepository cabanaCrudRepository;
 
-    public List<Cabana> getAll(){
+    public List<Cabana> getAll() {
         return (List<Cabana>) cabanaCrudRepository.findAll();
     }
-    public Optional<Cabana> getCabana(int id){
+
+    public Optional<Cabana> getCabana(int id) {
         return cabanaCrudRepository.findById(id);
     }
 
-    public Cabana save(Cabana cabana){
+    public Cabana save(Cabana cabana) {
         return cabanaCrudRepository.save(cabana);
     }
-    public void delete(Cabana cabana){
+
+    public void delete(Cabana cabana) {
         cabanaCrudRepository.delete(cabana);
     }
-   
-    
+
 }
