@@ -25,7 +25,8 @@ public class CategoriaController {
         return servicio.getCategoria(categoriaId);
     }
 
-    @PostMapping("/save")
+    //@PostMapping("/save")
+    @PostMapping("/all")
     @ResponseStatus(HttpStatus.CREATED)
     public Categoria save(@RequestBody Categoria categoria) {
         return servicio.save(categoria);

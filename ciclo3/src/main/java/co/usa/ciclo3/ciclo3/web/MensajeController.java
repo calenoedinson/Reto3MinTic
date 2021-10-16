@@ -25,7 +25,8 @@ public class MensajeController {
         return servicio.getMensaje(MensajeId);
     }
 
-    @PostMapping("/save")
+    //@PostMapping("/save")
+    @PostMapping("/all")
     @ResponseStatus(HttpStatus.CREATED)
     public Mensaje save(@RequestBody Mensaje Mensaje) {
         return servicio.save(Mensaje);

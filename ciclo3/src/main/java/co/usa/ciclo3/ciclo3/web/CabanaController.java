@@ -25,7 +25,8 @@ public class CabanaController {
         return servicio.getCabana(CabanaId);
     }
 
-    @PostMapping("/save")
+    //@PostMapping("/save")
+    @PostMapping("/all")
     @ResponseStatus(HttpStatus.CREATED)
     public Cabana save(@RequestBody Cabana Cabana) {
         return servicio.save(Cabana);

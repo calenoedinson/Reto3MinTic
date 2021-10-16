@@ -25,12 +25,13 @@ public class ClienteController {
         return servicio.getCliente(ClienteId);
     }
 
-    @PostMapping("/save")
+    //@PostMapping("/save")
+    @PostMapping("/all")
     @ResponseStatus(HttpStatus.CREATED)
     public Cliente save(@RequestBody Cliente Cliente) {
         return servicio.save(Cliente);
     }
-
+    
     @PutMapping("/update")
     @ResponseStatus(HttpStatus.CREATED)
     public Cliente update(@RequestBody Cliente Cliente) {
