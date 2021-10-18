@@ -51,8 +51,5 @@ public class Categoria implements Serializable {
         this.cabins = cabins;
     }
 
-        
-    
-    
     
 }

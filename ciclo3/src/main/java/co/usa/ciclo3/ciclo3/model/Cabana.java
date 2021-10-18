@@ -14,22 +14,21 @@ public class Cabana implements Serializable {
     private Integer id;
     private String brand;
     private Integer rooms;
-    //private Integer category;
     private String name;
     private String description;
 
     @ManyToOne
     @JoinColumn(name = "idCategory")
-    @JsonIgnoreProperties("category")
+    @JsonIgnoreProperties("cabins")
     private Categoria category;
 
     @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "cabin")
-    @JsonIgnoreProperties({"cabin", "client"})
+    @JsonIgnoreProperties({"cabin","client"})
     private List<Mensaje> messages;
 
     @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "cabin")
-    @JsonIgnoreProperties({"cabin", "messages"})
-    public List<Reserva> reservations;
+    @JsonIgnoreProperties({"cabin","client"})
+    private List<Reserva> reservations;
 
     public Integer getId() {
         return id;
@@ -94,5 +93,6 @@ public class Cabana implements Serializable {
     public void setReservations(List<Reserva> reservations) {
         this.reservations = reservations;
     }
-
+    
+        
 }

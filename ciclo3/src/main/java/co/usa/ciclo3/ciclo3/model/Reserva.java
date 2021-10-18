@@ -17,18 +17,15 @@ public class Reserva implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "id")
-    @JsonIgnoreProperties("reservation")
+    @JsonIgnoreProperties("reservations")
     private Cabana cabin;
 
     @ManyToOne
     @JoinColumn(name = "idClient")
-    @JsonIgnoreProperties({"reservation", "message"})
+    @JsonIgnoreProperties({"reservations", "messages"})
     private Cliente client;
-    /*
-    @OneToOne(cascade = {CascadeType.REMOVE},mappedBy="reservation")
-    @JsonIgnoreProperties("reservation")
-    private Score score;
-     */
+    
+    private String score;
 
     public Integer getIdReservation() {
         return idReservation;
@@ -77,8 +74,14 @@ public class Reserva implements Serializable {
     public void setClient(Cliente client) {
         this.client = client;
     }
-    
-    
-    
 
+    public String getScore() {
+        return score;
+    }
+
+    public void setScore(String score) {
+        this.score = score;
+    }
+
+   
 }
