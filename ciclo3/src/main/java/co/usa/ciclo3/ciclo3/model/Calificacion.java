@@ -10,8 +10,9 @@ public class Calificacion implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    private Integer puntuacion;
     private String vr_mensaje;
-    private String vr_reserva;
+    private Integer vr_reserva;
 
     public Integer getId() {
         return id;
@@ -19,6 +20,14 @@ public class Calificacion implements Serializable {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public Integer getPuntuacion() {
+        return puntuacion;
+    }
+
+    public void setPuntuacion(Integer puntuacion) {
+        this.puntuacion = puntuacion;
     }
 
     public String getVr_mensaje() {
@@ -29,13 +38,13 @@ public class Calificacion implements Serializable {
         this.vr_mensaje = vr_mensaje;
     }
 
-    public String getVr_reserva() {
+    public Integer getVr_reserva() {
         return vr_reserva;
     }
 
-    public void setVr_reserva(String vr_reserva) {
+    public void setVr_reserva(Integer vr_reserva) {
         this.vr_reserva = vr_reserva;
     }
 
-
+    
 }
