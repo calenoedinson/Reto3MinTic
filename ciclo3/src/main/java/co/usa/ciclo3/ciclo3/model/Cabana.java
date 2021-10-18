@@ -14,20 +14,20 @@ public class Cabana implements Serializable {
     private Integer id;
     private String name;
     private String brand;
-    private Integer rooms;    
+    private Integer rooms;
     private String description;
 
     @ManyToOne
     @JoinColumn(name = "id")
-    @JsonIgnoreProperties("categoria")
+    @JsonIgnoreProperties({"messages", "client", "reservations", "cabin"})
     private Categoria category;
 
     @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "cabin")
-    @JsonIgnoreProperties({"cabin","client"})
+    @JsonIgnoreProperties({"cabin", "client"})
     private List<Mensaje> messages;
 
     @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "cabin")
-    @JsonIgnoreProperties({"cabin","client"})
+    @JsonIgnoreProperties({"cabin", "client"})
     private List<Reserva> reservations;
 
     public Integer getId() {
@@ -94,5 +94,4 @@ public class Cabana implements Serializable {
         this.reservations = reservations;
     }
 
-    
 }
