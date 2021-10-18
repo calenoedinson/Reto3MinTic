@@ -50,6 +50,5 @@ public class Categoria implements Serializable {
     public void setCabins(List<Cabana> cabins) {
         this.cabins = cabins;
     }
-
     
 }
