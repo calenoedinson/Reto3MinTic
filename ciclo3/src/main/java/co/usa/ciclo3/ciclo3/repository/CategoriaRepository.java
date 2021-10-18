@@ -17,7 +17,7 @@ public class CategoriaRepository {
         return (List<Categoria>) CategoriaCrudRepository.findAll();
     }
 
-    public Optional<Categoria> getCabana(int id) {
+    public Optional<Categoria> getCategoria(int id) {
         return CategoriaCrudRepository.findById(id);
     }
 
