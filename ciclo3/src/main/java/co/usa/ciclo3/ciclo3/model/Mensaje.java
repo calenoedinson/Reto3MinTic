@@ -15,7 +15,7 @@ public class Mensaje implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "id")
-    @JsonIgnoreProperties({"messages", "reservations", "client"})
+    @JsonIgnoreProperties({"messages", "client", "reservations"})
     private Cabana cabin;
 
     @ManyToOne
@@ -55,5 +55,4 @@ public class Mensaje implements Serializable {
         this.client = client;
     }
 
-    
 }

@@ -12,9 +12,9 @@ public class Cabana implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private String brand;
-    private Integer rooms;
     private String name;
+    private String brand;
+    private Integer rooms;    
     private String description;
 
     @ManyToOne
@@ -38,6 +38,14 @@ public class Cabana implements Serializable {
         this.id = id;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public String getBrand() {
         return brand;
     }
@@ -52,14 +60,6 @@ public class Cabana implements Serializable {
 
     public void setRooms(Integer rooms) {
         this.rooms = rooms;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public String getDescription() {
@@ -93,6 +93,6 @@ public class Cabana implements Serializable {
     public void setReservations(List<Reserva> reservations) {
         this.reservations = reservations;
     }
+
     
-        
 }
