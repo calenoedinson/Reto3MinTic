@@ -22,7 +22,7 @@ public class CategoriaService {
     }
 
     public Categoria save(Categoria Categoria) {
-        if (Categoria.getId()== null) {
+        if (Categoria.getId() == null) {
             return metodosCrud.save(Categoria);
         } else {
             Optional<Categoria> e = metodosCrud.getCategoria(Categoria.getId());

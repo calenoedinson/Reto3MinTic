@@ -17,30 +17,30 @@ public class CategoriaController {
     private CategoriaService servicio;
 
     @GetMapping("/all")
-    public List<Categoria> getCategoria() {
+    public List<Categoria> getCategorias() {
         return servicio.getAll();
     }
 
     @GetMapping("/{id}")
-    public Optional<Categoria> getCategoria(@PathVariable("id") int categoriaId) {
-        return servicio.getCategoria(categoriaId);
+    public Optional<Categoria> getCategorias(@PathVariable("id") int CategoriaId) {
+        return servicio.getCategoria(CategoriaId);
     }
 
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
-    public Categoria save(@RequestBody Categoria categoria) {
-        return servicio.save(categoria);
+    public Categoria save(@RequestBody Categoria Categoria) {
+        return servicio.save(Categoria);
     }
 
     @PutMapping("/update")
     @ResponseStatus(HttpStatus.CREATED)
-    public Categoria update(@RequestBody Categoria categoria) {
-        return servicio.update(categoria);
+    public Categoria update(@RequestBody Categoria Categoria) {
+        return servicio.update(Categoria);
     }
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public boolean delete(@PathVariable("id") int categoriaId) {
-        return servicio.deleteCategoria(categoriaId);
+    public boolean delete(@PathVariable("id") int CategoriaId) {
+        return servicio.deleteCategoria(CategoriaId);
     }
 }
