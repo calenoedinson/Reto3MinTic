@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/Message")
+@CrossOrigin(origins = "*",methods = {RequestMethod.GET,RequestMethod.POST,RequestMethod.PUT,RequestMethod.DELETE})
 public class MensajeController {
 
     @Autowired
@@ -25,8 +26,7 @@ public class MensajeController {
         return servicio.getMensaje(MensajeId);
     }
 
-    //@PostMapping("/save")
-    @PostMapping("/all")
+    @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
     public Mensaje save(@RequestBody Mensaje Mensaje) {
         return servicio.save(Mensaje);
