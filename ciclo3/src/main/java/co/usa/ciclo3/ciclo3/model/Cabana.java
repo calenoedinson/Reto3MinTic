@@ -18,8 +18,8 @@ public class Cabana implements Serializable {
     private String description;
 
     @ManyToOne
-    @JoinColumn(name = "idCategory")
-    @JsonIgnoreProperties("cabins")
+    @JoinColumn(name = "id")
+    @JsonIgnoreProperties("categoria")
     private Categoria category;
 
     @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "cabin")

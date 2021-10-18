@@ -6,7 +6,7 @@ import java.io.Serializable;
 import java.util.List;
 
 @Entity
-@Table(name = "category")
+@Table(name = "categoria")
 public class Categoria implements Serializable {
 
     @Id
@@ -15,8 +15,8 @@ public class Categoria implements Serializable {
     private String name;
     private String description;
 
-    @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "category")
-    @JsonIgnoreProperties("category")
+    @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "categoria")
+    @JsonIgnoreProperties("categoria")
     private List<Cabana> cabins;
 
     public Integer getId() {
@@ -51,6 +51,6 @@ public class Categoria implements Serializable {
         this.cabins = cabins;
     }
 
-    
+        
     
 }
