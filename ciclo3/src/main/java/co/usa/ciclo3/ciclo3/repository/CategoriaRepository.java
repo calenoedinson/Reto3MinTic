@@ -11,19 +11,21 @@ import java.util.Optional;
 @Repository
 public class CategoriaRepository {
     @Autowired
-    private CategoriaCrudRepository categoriaCrudRepository;
+    private CategoriaCrudRepository CategoriaCrudRepository;
 
-    public List<Categoria> getAll(){
-        return (List<Categoria>) categoriaCrudRepository.findAll();
+    public List<Categoria> getAll() {
+        return (List<Categoria>) CategoriaCrudRepository.findAll();
     }
-    public Optional<Categoria>getCategoria(int id){
-        return categoriaCrudRepository.findById(id);
+
+    public Optional<Categoria> getCabana(int id) {
+        return CategoriaCrudRepository.findById(id);
     }
-    public Categoria save(Categoria c){
-        return categoriaCrudRepository.save(c);
+
+    public Categoria save(Categoria Categoria) {
+        return CategoriaCrudRepository.save(Categoria);
     }
 
     public void delete(Categoria Categoria) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        CategoriaCrudRepository.delete(Categoria);
     }
 }
