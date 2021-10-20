@@ -93,5 +93,4 @@ public class Cabana implements Serializable {
     public void setReservations(List<Reserva> reservations) {
         this.reservations = reservations;
     }
-
 }

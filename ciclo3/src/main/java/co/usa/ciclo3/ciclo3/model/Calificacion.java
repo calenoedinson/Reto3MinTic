@@ -46,5 +46,5 @@ public class Calificacion implements Serializable {
         this.vr_reserva = vr_reserva;
     }
 
-    
+       
 }

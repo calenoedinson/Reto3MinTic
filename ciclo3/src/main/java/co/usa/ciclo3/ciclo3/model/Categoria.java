@@ -1,9 +1,9 @@
 package co.usa.ciclo3.ciclo3.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "category")
@@ -50,7 +50,5 @@ public class Categoria implements Serializable {
     public void setCabins(List<Cabana> cabins) {
         this.cabins = cabins;
     }
-    
-            
-    
+
 }
