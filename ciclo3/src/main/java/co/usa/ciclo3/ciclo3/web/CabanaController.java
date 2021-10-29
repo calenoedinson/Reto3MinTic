@@ -41,6 +41,7 @@ public class CabanaController {
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public boolean delete(@PathVariable("id") int CabanaId) {
+        System.out.println(CabanaId);
         return servicio.deleteCabana(CabanaId);
     }
 }
