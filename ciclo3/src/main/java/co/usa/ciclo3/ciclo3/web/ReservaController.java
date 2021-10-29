@@ -1,6 +1,8 @@
 package co.usa.ciclo3.ciclo3.web;
 
 import co.usa.ciclo3.ciclo3.model.Reserva;
+import co.usa.ciclo3.ciclo3.reportes.ContadorClientes;
+import co.usa.ciclo3.ciclo3.reportes.StatusReservas;
 import co.usa.ciclo3.ciclo3.service.ReservaService;
 import java.util.List;
 import java.util.Optional;
@@ -42,5 +44,21 @@ public class ReservaController {
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public boolean delete(@PathVariable("id") int ReservaId) {
         return servicio.deleteReserva(ReservaId);
+    }
+    
+    @GetMapping("/report-status")
+    public StatusReservas getReserva(){
+        return servicio.getReporteStatusReservaciones();
+    }
+    
+    @GetMapping("/report-dates/{dateOne}/{dateTwo}")
+    public List<Reserva> getReservasTiempo (@PathVariable("dateOne")String dateOne, @PathVariable("dateTwo")String dateTwo){
+        return servicio.getReportesTiempoReservaciones(dateOne, dateTwo);
+    }
+    
+    @GetMapping("/report-clients")
+    public List<ContadorClientes> getClientes(){
+        return servicio.servicioTopClientes();
+    
     }
 }
